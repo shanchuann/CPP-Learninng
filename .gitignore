@@ -361,3 +361,11 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Visual Studio Code
+C++_Learninng.sln
+C++_Learninng.vcxproj
+C++_Learninng.vcxproj.filters
+C++_Learninng.vcxproj.user
+/x64
+/C++_Learninng
