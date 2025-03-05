@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="const.cpp" />
     <ClCompile Include="Initialization.cpp" />
     <ClCompile Include="io.cpp" />
   </ItemGroup>
