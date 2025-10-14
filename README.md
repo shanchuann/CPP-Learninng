@@ -1,6 +1,6 @@
 # CPP-Learninng
 
-![image](https://img.shields.io/badge/level-beginner-cyan.svg)![image](https://img.shields.io/badge/language-C++-blue.svg)![image](https://img.shields.io/badge/license-MIT-green.svg)![image](https://img.shields.io/badge/environment-Visual%20Studio-orange.svg)
+![image](https://img.shields.io/badge/level-beginner-cyan.svg) ![image](https://img.shields.io/badge/language-C++-blue.svg) ![image](https://img.shields.io/badge/license-MIT-green.svg) ![image](https://img.shields.io/badge/environment-Visual%20Studio-orange.svg)
 
 一个用于学习 C++ 基础知识的实践仓库，包含核心语法与特性的代码示例。
 
