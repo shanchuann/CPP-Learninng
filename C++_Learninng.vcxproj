@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="const.cpp" />
     <ClCompile Include="Default_parameters.cpp" />
+    <ClCompile Include="Function_overloading.cpp" />
     <ClCompile Include="Initialization.cpp" />
     <ClCompile Include="io.cpp" />
     <ClCompile Include="References.cpp" />
