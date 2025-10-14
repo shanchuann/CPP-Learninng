@@ -51,7 +51,7 @@ void print(const int& a) {
 // void show(int a) { cout << "show(int): " << a << endl; }
 // void show(const int a) { cout << "show(const int): " << a << endl; }
 
-
+#if 0
 int main() {
     cout << "----- 参数类型不同的重载 -----" << endl;
     func(10);       // 匹配 func(int)
