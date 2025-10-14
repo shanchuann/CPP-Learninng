@@ -404,6 +404,22 @@ void str_cpp() {
 	cin.get(str, n, '@');
 	cout << str;
 }
+void Const() {
+	const int a = 10;
+	int* p = (int*)&a;
+	int b = 0;
+	*p = 100;
+	b = a;
+	printf("a = %d, *p = %d, b = %d\n", a, *p, b);
+}
+void Hong() {
+	cout << __FILE__ << endl;
+	cout << __DATE__ << endl;
+	cout << __TIME__ << endl; //¼ÇÂ¼±àÒëÊ±¼ä
+	cout << __LINE__ << endl;
+	cout << __func__ << endl;
+	cout << __cplusplus << endl;
+}
 #if 0
 int main()
 {
@@ -414,6 +430,8 @@ int main()
 	//i_cpp();
 	//o_cpp();
 	//str_cpp();
+	//Const();
+	//Hong();
 	return 0;
 }
 #endif

@@ -128,8 +128,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="const.cpp" />
+    <ClCompile Include="Default_parameters.cpp" />
     <ClCompile Include="Initialization.cpp" />
     <ClCompile Include="io.cpp" />
+    <ClCompile Include="References.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Default_parameters_func.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
