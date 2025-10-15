@@ -132,6 +132,7 @@
     <ClCompile Include="Function_overloading.cpp" />
     <ClCompile Include="Initialization.cpp" />
     <ClCompile Include="io.cpp" />
+    <ClCompile Include="Name_Mangling.cpp" />
     <ClCompile Include="References.cpp" />
   </ItemGroup>
   <ItemGroup>

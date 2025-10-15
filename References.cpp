@@ -73,21 +73,21 @@ void ref_basic() {
 
 // 2. 引用作为函数参数（与值传递、指针传递对比）
 // 值传递：无法修改实参
-void valSwap(int a, int b) {
+void ReferencevalSwap(int a, int b) {
     int temp = a;
     a = b;
     b = temp;
 }
 
 // 引用传递：直接修改实参，无需解引用
-void refSwap(int& a, int& b) { // 引用必须绑定有效变量，无需检查空值
+void ReferencerefSwap(int& a, int& b) { // 引用必须绑定有效变量，无需检查空值
     int temp = a;
     a = b;
     b = temp;
 }
 
 // 指针传递：需解引用，需检查指针有效性
-void ptrSwap(int* a, int* b) {
+void ReferenceptrSwap(int* a, int* b) {
     assert(a != nullptr && b != nullptr); // 检查指针非空
     int temp = *a;
     *a = *b;
@@ -99,13 +99,13 @@ void ref_in_function() {
     int a = 10, b = 20;
     cout << "Before swap: a = " << a << ", b = " << b << endl;
 
-    valSwap(a, b);
+    ReferencevalSwap(a, b);
     cout << "After valSwap: a = " << a << ", b = " << b << endl; // 实参未改变
 
-    refSwap(a, b);
+    ReferencerefSwap(a, b);
     cout << "After refSwap: a = " << a << ", b = " << b << endl; // 实参交换
 
-    ptrSwap(&a, &b);
+    ReferenceptrSwap(&a, &b);
     cout << "After ptrSwap: a = " << a << ", b = " << b << endl; // 实参交换（交换回来）
     cout << endl;
 }

@@ -33,6 +33,9 @@
     <ClCompile Include="Function_overloading.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Name_Mangling.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default_parameters_func.h">
