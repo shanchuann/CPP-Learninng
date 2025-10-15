@@ -21,9 +21,6 @@
     <ClCompile Include="io.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="const.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="References.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -34,6 +31,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Name_Mangling.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Function_template.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

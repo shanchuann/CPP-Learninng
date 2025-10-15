@@ -41,6 +41,8 @@ void __fastcall func(int a, int b) { // __fastcall：快速调用，部分参数通过寄存器
     // 实现
 	cout << "func called with a = " << a << ", b = " << b << endl;
 }
+
+#if 0
 int main() {
     cout << "----- 名字粉碎与函数重载 -----" << endl;
     int a = 10;
@@ -57,6 +59,4 @@ int main() {
 
     return 0;
 }
-#if 0
-
 #endif
