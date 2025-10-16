@@ -136,6 +136,7 @@
     <ClCompile Include="Namespace.cpp" />
     <ClCompile Include="Name_Mangling.cpp" />
     <ClCompile Include="New_Delete.cpp" />
+    <ClCompile Include="Nullptr.cpp" />
     <ClCompile Include="Range_for.cpp" />
     <ClCompile Include="References.cpp" />
     <ClCompile Include="Type_derivation.cpp" />
