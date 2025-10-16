@@ -51,6 +51,12 @@
     <ClCompile Include="Nullptr.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Typedef_and_using.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="String.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default_parameters_func.h">

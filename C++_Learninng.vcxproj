@@ -139,6 +139,8 @@
     <ClCompile Include="Nullptr.cpp" />
     <ClCompile Include="Range_for.cpp" />
     <ClCompile Include="References.cpp" />
+    <ClCompile Include="String.cpp" />
+    <ClCompile Include="Typedef_and_using.cpp" />
     <ClCompile Include="Type_derivation.cpp" />
   </ItemGroup>
   <ItemGroup>
