@@ -42,6 +42,12 @@
     <ClCompile Include="New_Delete.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Type_derivation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Range_for.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default_parameters_func.h">

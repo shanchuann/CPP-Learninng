@@ -76,6 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -135,7 +136,9 @@
     <ClCompile Include="Namespace.cpp" />
     <ClCompile Include="Name_Mangling.cpp" />
     <ClCompile Include="New_Delete.cpp" />
+    <ClCompile Include="Range_for.cpp" />
     <ClCompile Include="References.cpp" />
+    <ClCompile Include="Type_derivation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default_parameters_func.h" />
