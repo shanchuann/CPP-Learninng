@@ -57,9 +57,15 @@
     <ClCompile Include="String.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Encapsulation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default_parameters_func.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Encapsulation_Person.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
