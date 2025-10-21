@@ -187,12 +187,12 @@ void constructor_overload_demo() {
     Person p2("Tom", 18);
     p2.show(); // 输出参数初始化的值
 }
+
+#if 0
 int main() {
     this_pointer_demo();                // this指针的隐含使用演示
     constructor_destructor_demo();      // 构造与析构（动态内存管理）演示
     constructor_overload_demo();        // 构造函数重载（无参vs带参）演示
     return 0;
 }
-#if 0
-
 #endif
