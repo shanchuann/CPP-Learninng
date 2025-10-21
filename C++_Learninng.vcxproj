@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Construct_destruction.cpp" />
     <ClCompile Include="Default_parameters.cpp" />
     <ClCompile Include="Encapsulation.cpp" />
     <ClCompile Include="Function_overloading.cpp" />

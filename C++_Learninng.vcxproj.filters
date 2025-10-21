@@ -60,6 +60,9 @@
     <ClCompile Include="Encapsulation.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Construct_destruction.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default_parameters_func.h">

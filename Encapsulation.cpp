@@ -181,12 +181,12 @@ void friend_function_demo() {
     // 验证：外部无法直接访问私有成员
     // cout << rect1.width; // 错误：private成员不可直接访问
 }
+
+#if 0
 int main() {
     encapsulation_demo();              // 封装特性演示（权限控制、接口设计）
     constructor_delegation_demo();     // 构造函数委托演示（代码复用）
     friend_function_demo();            // 友元函数演示（突破封装）
     return 0;
 }
-#if 0
-
 #endif
