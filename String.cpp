@@ -2,7 +2,7 @@
 #include<iostream>
 #include<string>
 #include<cstring> // 用于C风格字符串操作（如验证c_str()结果）
-using namespace std;
+
 /*******************************************************************************************************************
 * C++ std::string 核心操作与类型转换
 * std::string是C++标准库提供的字符串类，封装了字符串的存储、修改、查找等功能，解决了C风格字符串（char*）易溢出、操作繁琐的问题。
@@ -41,6 +41,7 @@ using namespace std;
 
 // 1. 场景1：C风格字符串与std::string的双向转换
 void str_conversion() {
+    using namespace std;
     cout << "----- C风格字符串与std::string双向转换 -----" << endl;
 
     // 1.1 C风格字符串 → std::string（隐式转换）
@@ -63,6 +64,7 @@ void str_conversion() {
 
 // 2. 场景2：std::string的查找与替换
 void str_find_replace() {
+    using namespace std;
     cout << "----- std::string查找与替换 -----" << endl;
 
     string s = "I love C++, C++ is easy!";
@@ -84,6 +86,7 @@ void str_find_replace() {
 
 // 3. 场景3：std::string的拼接、清空与判空
 void str_append_clear() {
+    using namespace std;
     cout << "----- std::string拼接、清空与判空 -----" << endl;
 
     // 3.1 拼接字符串：append()与operator+=
@@ -103,6 +106,7 @@ void str_append_clear() {
 
 // 4. 场景4：std::string的operator+拼接（创建新对象）
 void str_operator_plus() {
+    using namespace std;
     cout << "----- std::string operator+拼接 -----" << endl;
 
     string s1 = "Hello";

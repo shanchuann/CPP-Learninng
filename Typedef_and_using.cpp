@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
 #include<cstring>
-using namespace std;
+
 /*******************************************************************************************************************
 * C++11 using别名（Using Alias）
 * 定义：using别名是C++11引入的类型/模板别名机制，通过`using 别名 = 目标类型/模板`语法，为已有类型或模板定义简洁别名，
@@ -40,6 +40,7 @@ using namespace std;
 
 // 1. 场景1：普通类型别名（替代typedef，基础类型、指针、数组）
 void using_basic_type_alias() {
+    using namespace std;
     cout << "----- 普通类型别名（替代typedef） -----" << endl;
 
     // 1.1 基础类型别名：unsigned int → UINT
@@ -77,6 +78,7 @@ using Array = T[N];       // 模板别名：Array<T,N> 等价于 T[N]
 
 // 2.2 使用模板别名生成具体类型
 void using_template_alias() {
+    using namespace std;
     cout << "----- 模板别名（C++11新增） -----" << endl;
 
     // 2.2.1 生成“int类型、10大小”的数组类型：Array<int,10> → int[10]
@@ -103,6 +105,7 @@ void using_template_alias() {
 
 // 3. 场景3：using与typedef的可读性对比（复杂类型示例）
 void using_vs_typedef_readability() {
+    using namespace std;
     cout << "----- using与typedef可读性对比（复杂类型） -----" << endl;
 
     // 示例：为“返回值int、参数为(int, char*)的函数指针”定义别名

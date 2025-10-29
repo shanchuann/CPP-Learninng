@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
-using namespace std;
+
 /*******************************************************************************************************************
 * nullptr（空指针常量）
 * 定义：nullptr是C++11标准引入的**专门表示空指针的常量**，其类型为std::nullptr_t。
@@ -30,34 +30,34 @@ using namespace std;
 // 示例：函数重载场景（对比NULL与nullptr的差异）
 // 1. 重载1：接收int类型参数
 void Nullptrfunc(int a) {
-    cout << "调用int参数版本：int a = " << a << endl;
+    std::cout << "调用int参数版本：int a = " << a << std::endl;
 }
 
 // 2. 重载2：接收char*指针类型参数
 void Nullptrfunc(char* p) {
     if (p == nullptr) { // 使用nullptr判断指针是否为空
-        cout << "调用char*参数版本：char* p = nullptr" << endl;
+        std::cout << "调用char*参数版本：char* p = nullptr" << std::endl;
     }
     else {
-        cout << "调用char*参数版本：char* p = " << p << endl;
+        std::cout << "调用char*参数版本：char* p = " << p << std::endl;
     }
 }
 
 // 场景1：nullptr在函数重载中的无歧义匹配
 void nullptr_overload_demo() {
-    cout << "----- nullptr与NULL在函数重载中的对比 -----" << endl;
+    std::cout << "----- nullptr与NULL在函数重载中的对比 -----" << std::endl;
     // 1. 传递整数0：匹配int参数版本（符合预期）
     Nullptrfunc(0);
     // 2. 传递NULL：因C++中NULL是0，匹配int参数版本（歧义问题：本意是传递空指针，却匹配整数）
     Nullptrfunc(NULL);
     // 3. 传递nullptr：匹配char*参数版本（无歧义，符合空指针意图）
     Nullptrfunc(nullptr);
-    cout << endl;
+    std::cout << std::endl;
 }
 
 // 场景2：nullptr用于指针初始化与判空
 void nullptr_init_check() {
-    cout << "----- nullptr用于指针初始化与判空 -----" << endl;
+    std::cout << "----- nullptr用于指针初始化与判空 -----" << std::endl;
     // 1. 用nullptr初始化指针（替代NULL）
     char* p1 = nullptr;
     int* p2 = nullptr;
@@ -65,13 +65,13 @@ void nullptr_init_check() {
 
     // 2. 用nullptr判断指针是否为空
     if (p1 == nullptr) {
-        cout << "p1（char*）是空指针" << endl;
+        std::cout << "p1（char*）是空指针" << std::endl;
     }
     if (p2 != nullptr) {
-        cout << "p2（int*）是有效指针" << endl;
+        std::cout << "p2（int*）是有效指针" << std::endl;
     }
     else {
-        cout << "p2（int*）是空指针" << endl;
+        std::cout << "p2（int*）是空指针" << std::endl;
     }
 }
 

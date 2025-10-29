@@ -19,31 +19,31 @@ using namespace std;
 
 // 2.1 参数类型不同的重载
 void Function_Overloadingfunc(int a) {
-    cout << "func with int: " << a << endl;
+    std::cout << "func with int: " << a << std::endl;
 }
 void Function_Overloadingfunc(double a) {
-    cout << "func with double: " << a << endl;
+    std::cout << "func with double: " << a << std::endl;
 }
 
 // 2.2 参数个数不同的重载
 void Function_Overloadingfunc(int a, int b) {
-    cout << "func with two int: " << a << ", " << b << endl;
+    std::cout << "func with two int: " << a << ", " << b << std::endl;
 }
 
 // 2.3 参数顺序不同的重载（适用于不同类型参数）
 void Function_Overloadingprint(int a, double b) {
-    cout << "print(int, double): " << a << ", " << b << endl;
+    std::cout << "print(int, double): " << a << ", " << b << std::endl;
 }
 void Function_Overloadingprint(double a, int b) {
-    cout << "print(double, int): " << a << ", " << b << endl;
+    std::cout << "print(double, int): " << a << ", " << b << std::endl;
 }
 
 // 3.1 const修饰引用参数：可构成重载（引用的const属性不同）
 void Function_Overloadingprint(int& a) {
-    cout << "print(int&): " << a << endl;
+    std::cout << "print(int&): " << a << std::endl;
 }
 void Function_Overloadingprint(const int& a) {
-    cout << "print(const int&): " << a << endl;
+    std::cout << "print(const int&): " << a << std::endl;
 }
 
 // 3.2 const修饰按值传递参数：不能构成重载（函数签名相同，编译报错）
@@ -53,6 +53,7 @@ void Function_Overloadingprint(const int& a) {
 
 #if 0
 int main() {
+    using namespace std;
     cout << "----- 参数类型不同的重载 -----" << endl;
     Function_Overloadingfunc(10);       // 匹配 func(int)
     Function_Overloadingfunc(10.5);     // 匹配 func(double)

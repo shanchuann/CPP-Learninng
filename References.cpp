@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
 #include<assert.h>
-using namespace std;
+
 /*******************************************************************************************************************
 * 引用（Reference）
 * 引用是C++中一种特殊的变量类型，本质是已存在变量的别名，与被引用变量共享同一块内存空间。
@@ -52,6 +52,7 @@ using namespace std;
 
 // 1. 引用的基本使用
 void ref_basic() {
+    using namespace std;
     cout << "----- 引用的基本使用 -----" << endl;
     int a = 10;												// a的值为10
     int& r = a; // r是a的引用（别名）							// r和a共享内存，值均为10
@@ -95,6 +96,7 @@ void ReferenceptrSwap(int* a, int* b) {
 }
 
 void ref_in_function() {
+    using namespace std;
     cout << "----- 引用在函数中的使用 -----" << endl;
     int a = 10, b = 20;
     cout << "Before swap: a = " << a << ", b = " << b << endl;
@@ -112,6 +114,7 @@ void ref_in_function() {
 
 // 3. const引用
 void const_ref() {
+    using namespace std;
     cout << "----- const引用 -----" << endl;
     int a = 10;
     int& ra = a; // 普通引用
@@ -136,6 +139,7 @@ void const_ref() {
 
 // 4. 数组的引用
 void array_ref() {
+    using namespace std;
     cout << "----- 数组的引用 -----" << endl;
     const int N = 5;
     int arr[N] = { 1, 2, 3, 4, 5 };
@@ -156,6 +160,7 @@ void array_ref() {
 
 // 5. 指针的引用
 void ptr_ref() {
+    using namespace std;
     cout << "----- 指针的引用 -----" << endl;
     int a = 20;
     int* p = &a; // 指针p指向a
@@ -171,6 +176,7 @@ void ptr_ref() {
 
 // 6. 右值引用（简单示例，C++11特性）
 void rvalue_ref() {
+    using namespace std;
     cout << "----- 右值引用（C++11） -----" << endl;
     int a = 10;
     int& lref = a; // 左值引用（绑定左值）

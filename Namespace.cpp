@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
 #include<string>
-using namespace std;
+
 /*******************************************************************************************************************
 * 命名空间（Namespace）与作用域（Scope）
 *
@@ -40,14 +40,14 @@ namespace Math {
 // 第一块：声明命名空间A及成员Namef
 namespace A {
     void Namef() {
-        cout << "Function Namef in namespace A" << endl;
+        std::cout << "Function Namef in namespace A" << std::endl;
     }
 }
 
 // 第二块：扩展命名空间A，添加成员Nameg（同一命名空间可拆分定义）
 namespace A {
     void Nameg() {
-        cout << "Function Nameg in namespace A" << endl;
+        std::cout << "Function Nameg in namespace A" << std::endl;
     }
 }
 
@@ -57,8 +57,8 @@ namespace Company {          // 公司级命名空间
         namespace Utils {    // 工具模块命名空间
             namespace Log {  // 日志子模块命名空间
                 // 嵌套命名空间内的函数
-                void info(const string& msg) {
-                    cout << "[INFO] " << msg << endl;
+                void info(const std::string& msg) {
+                    std::cout << "[INFO] " << msg << std::endl;
                 }
             }
         }
@@ -71,13 +71,13 @@ namespace Log = Company::Project::Utils::Log;  // 为长命名空间定义别名
 
 // 4. using声明的使用（在特定作用域内引入命名空间成员）
 void calc() {
-    cout << "\n----- using声明示例 -----" << endl;
+    std::cout << "\n----- using声明示例 -----" << std::endl;
     // using声明：仅在calc()函数内引入Math::add，可直接使用add
     using Math::add;
-    cout << "add(2, 3) = " << add(2, 3) << endl;  // 等价于Math::add
+    std::cout << "add(2, 3) = " << add(2, 3) << std::endl;  // 等价于Math::add
 
     // 未引入Math::mul，需显式通过命名空间访问
-    cout << "Math::mul(2, 3) = " << Math::mul(2, 3) << endl;
+    std::cout << "Math::mul(2, 3) = " << Math::mul(2, 3) << std::endl;
 }
 
 
@@ -97,27 +97,28 @@ public:
 
 // 5.3 局部作用域与块作用域
 void scopeDemo() {
-    cout << "\n----- 作用域示例（全局、局部、块） -----" << endl;
+    std::cout << "\n----- 作用域示例（全局、局部、块） -----" << std::endl;
     // 局部作用域：函数内部定义，仅在scopeDemo()内可见
     int Local_scope = 20;
 
     // 块作用域：{}内定义，仅在该块内可见
     {
         int Block_scope = 30;  // 块作用域变量
-        cout << "Block_scope: " << Block_scope << endl;  // 块内可访问
-        cout << "Local_scope（块内访问）: " << Local_scope << endl;  // 可访问外部局部变量
-        cout << "Global_scope（块内访问）: " << Global_scope << endl;  // 可访问全局变量
+        std::cout << "Block_scope: " << Block_scope << std::endl;  // 块内可访问
+        std::cout << "Local_scope（块内访问）: " << Local_scope << std::endl;  // 可访问外部局部变量
+        std::cout << "Global_scope（块内访问）: " << Global_scope << std::endl;  // 可访问全局变量
     }
 
     // 块外不可访问Block_scope
     // cout << Block_scope << endl;  // 编译错误：未声明的标识符
 
-    cout << "Local_scope（块外访问）: " << Local_scope << endl;  // 局部作用域内可访问
-    cout << "Global_scope（函数内访问）: " << Global_scope << endl;  // 可访问全局变量
+    std::cout << "Local_scope（块外访问）: " << Local_scope << std::endl;  // 局部作用域内可访问
+    std::cout << "Global_scope（函数内访问）: " << Global_scope << std::endl;  // 可访问全局变量
 }
 
 #if 0
 int main() {
+    using namespace std;
     // 访问扩展后的命名空间A
     cout << "----- 命名空间扩展示例 -----" << endl;
     A::Namef();  // 调用A中的Namef

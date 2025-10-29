@@ -2,7 +2,7 @@
 #include<iostream>
 #include<vector>
 #include<string>
-using namespace std;
+
 /*******************************************************************************************************************
 * 范围for循环（Range-based for Loop）
 * 定义：范围for循环是C++11引入的语法糖，用于**遍历可迭代对象的所有元素**（无需手动控制索引或迭代器），
@@ -40,19 +40,20 @@ using namespace std;
 
 // 1. 场景1：范围for循环遍历原生数组（值传递）
 void range_for_array() {
-    cout << "----- 范围for循环遍历原生数组 -----" << endl;
+    std::cout << "----- 范围for循环遍历原生数组 -----" << std::endl;
     int arr[] = { 10, 20, 30, 40, 50 }; // 原生数组（明确大小）
 
     // 用auto值传递：遍历数组元素的副本，适合简单int类型
-    cout << "数组元素: ";
+    std::cout << "数组元素: ";
     for (auto num : arr) {
-        cout << num << " "; // 自动遍历所有元素，无需索引
+        std::cout << num << " "; // 自动遍历所有元素，无需索引
     }
-    cout << "\n" << endl;
+    std::cout << "\n" << std::endl;
 }
 
 // 2. 场景2：范围for循环遍历vector并修改元素（引用传递）
 void range_for_vector_modify() {
+    using namespace std;
     cout << "----- 范围for循环遍历vector并修改元素 -----" << endl;
     vector<int> nums = { 1, 2, 3, 4 }; // STL容器vector
 
@@ -78,6 +79,7 @@ void range_for_vector_modify() {
 
 // 3. 场景3：范围for循环遍历vector<string>（const引用，避免拷贝）
 void range_for_vector_string() {
+    using namespace std;
     cout << "----- 范围for循环遍历vector<string>（const引用） -----" << endl;
     vector<string> fruits = { "apple", "banana", "cherry" }; // 元素为string（大对象）
 
@@ -91,6 +93,7 @@ void range_for_vector_string() {
 
 // 4. 场景4：范围for循环的注意事项（禁止修改容器结构）
 void range_for_warning() {
+    using namespace std;
     cout << "----- 范围for循环注意事项（禁止修改容器结构） -----" << endl;
     vector<int> nums = { 1, 2, 3 };
 

@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
-using namespace std;
+
 /*******************************************************************************************************************
 * 名字粉碎（Name Mangling）
 * 定义：名字粉碎是C++编译器为支持函数重载而采用的一种技术。编译器会将函数名与参数类型、参数个数、调用约定等信息
@@ -35,15 +35,16 @@ bool __stdcall funa(int a, int b) {  // __stdcall：Windows API常用约定，调用方不
 }
 void __cdecl funb(int a, int b) {    // __cdecl：C/C++默认约定，调用方清理栈，支持可变参数（如printf）
     // 实现
-	cout << "funb called with a = " << a << ", b = " << b << endl;
+	std::cout << "funb called with a = " << a << ", b = " << b << std::endl;
 }
 void __fastcall func(int a, int b) { // __fastcall：快速调用，部分参数通过寄存器传递（而非栈），提高效率
     // 实现
-	cout << "func called with a = " << a << ", b = " << b << endl;
+    std::cout << "func called with a = " << a << ", b = " << b << std::endl;
 }
 
 #if 0
 int main() {
+    using namespace std;
     cout << "----- 名字粉碎与函数重载 -----" << endl;
     int a = 10;
     // 以下调用会触发编译器生成对应函数的粉碎后名字，用于链接阶段匹配

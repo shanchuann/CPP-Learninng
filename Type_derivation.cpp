@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
 #include<typeinfo> // 用于typeid()获取类型信息
-using namespace std;
+
 /*******************************************************************************************************************
 * C++类型推导（Type Deduction）
 * 类型推导是C++11及后续标准引入的核心特性，通过auto和decltype两种关键字实现，无需显式指定类型即可推导变量/表达式的类型，
@@ -50,6 +50,7 @@ using namespace std;
 // 1. auto类型推导示例
 // 1.1 auto基础推导（普通类型、const、指针、引用）
 void auto_basic() {
+    using namespace std;
     cout << "----- auto基础推导 -----" << endl;
     const int ca = 10;    // 顶层const变量
     int x = 20;
@@ -80,6 +81,7 @@ void auto_basic() {
 
 // 1.2 auto在new表达式和多变量声明中的使用
 void auto_new_multi() {
+    using namespace std;
     cout << "----- auto在new和多变量声明中 -----" << endl;
     // new表达式中的auto
     auto* p1 = new int(30);    // p1推导为int*
@@ -101,10 +103,12 @@ void auto_new_multi() {
 
 // 1.3 auto作为函数参数（C++14起支持，本质是泛型函数）
 void auto_func_param(auto x) {
+    using namespace std;
     cout << "auto函数参数接收值: " << x << " (类型: " << typeid(x).name() << ")" << endl;
 }
 
 void auto_function() {
+    using namespace std;
     cout << "----- auto作为函数参数 -----" << endl;
     auto_func_param(10);       // x推导为int
     auto_func_param(10.5);     // x推导为double
@@ -115,6 +119,7 @@ void auto_function() {
 // 2. decltype类型推导示例
 // 2.1 decltype推导变量类型（保留const和引用）
 void decltype_var() {
+    using namespace std;
     cout << "----- decltype推导变量类型 -----" << endl;
     int x = 10;
     const int& rx = x;    // const引用
@@ -137,6 +142,7 @@ void decltype_var() {
 
 // 2.2 decltype推导表达式类型（括号影响、运算结果）
 void decltype_expr() {
+    using namespace std;
     cout << "----- decltype推导表达式类型 -----" << endl;
     int x = 10, y = 20;
 
@@ -161,6 +167,7 @@ void decltype_expr() {
 int type_add(int a, int b) { return a + b; } // 函数返回int
 
 void decltype_func_ret() {
+    using namespace std;
     cout << "----- decltype推导函数返回值 -----" << endl;
     // 推导函数返回值类型（无需调用函数，仅需参数类型合法）
     decltype(type_add(0, 0)) ret;  // type_add(0,0)返回int，ret推导为int
@@ -171,6 +178,7 @@ void decltype_func_ret() {
 
 // 3. auto与decltype的区别对比示例
 void auto_vs_decltype() {
+    using namespace std;
     cout << "----- auto与decltype区别对比 -----" << endl;
     const int ca = 10;
 

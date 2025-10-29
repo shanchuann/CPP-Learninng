@@ -2,7 +2,6 @@
 #include<iostream>
 #include<time.h>   // 用于time()函数，生成随机数种子
 #include<stdlib.h> // 用于srand()和rand()函数，生成随机数
-using namespace std;
 /*******************************************************************************************************************
 * 缺省参数（Default Parameters）
 * 定义：缺省参数是指在函数声明或定义时，为函数的参数指定一个默认值。当函数调用时，若未显式传递该参数，则使用默认值；
@@ -32,20 +31,20 @@ int Random() {
 
 // 2.2 动态默认值的缺省参数函数
 void def_param_dynamic(int a = 10, int b = Random(), int c = 30) {
-    cout << "----- 动态默认值的缺省参数 -----" << endl;
-    cout << "a = " << a << endl;
-    cout << "b = " << b << endl; // b的默认值由Random()动态生成
-    cout << "c = " << c << endl;
-    cout << endl;
+    std::cout << "----- 动态默认值的缺省参数 -----" << std::endl;
+    std::cout << "a = " << a << std::endl;
+    std::cout << "b = " << b << std::endl; // b的默认值由Random()动态生成
+    std::cout << "c = " << c << std::endl;
+    std::cout << std::endl;
 }
 
 // 1.1 基础缺省参数（从右向左依次设置）
 void def_param_basic(int a, int b = 20, int c = 30) {
-    cout << "----- 基础缺省参数（从右向左设置） -----" << endl;
-    cout << "a = " << a << endl;
-    cout << "b = " << b << endl;
-    cout << "c = " << c << endl;
-    cout << endl;
+    std::cout << "----- 基础缺省参数（从右向左设置） -----" << std::endl;
+    std::cout << "a = " << a << std::endl;
+    std::cout << "b = " << b << std::endl;
+    std::cout << "c = " << c << std::endl;
+    std::cout << std::endl;
 }
 
 // 错误示例：缺省参数未从右向左设置（编译报错）
@@ -55,13 +54,13 @@ void def_param_basic(int a, int b = 20, int c = 30) {
 
 // 2.3 结合逗号表达式的缺省参数
 void def_param_comma(int a = 0, int b = 0, int c = 0, int d = 0, int e = 0) {
-    cout << "----- 结合逗号表达式的缺省参数 -----" << endl;
-    cout << "a = " << a << endl;
-    cout << "b = " << b << endl; // 逗号表达式(1,2,3)取最后一个值3
-    cout << "c = " << c << endl;
-    cout << "d = " << d << endl;
-    cout << "e = " << e << endl;
-    cout << endl;
+    std::cout << "----- 结合逗号表达式的缺省参数 -----" << std::endl;
+    std::cout << "a = " << a << std::endl;
+    std::cout << "b = " << b << std::endl; // 逗号表达式(1,2,3)取最后一个值3
+    std::cout << "c = " << c << std::endl;
+    std::cout << "d = " << d << std::endl;
+    std::cout << "e = " << e << std::endl;
+    std::cout << std::endl;
 }
 
 // 1.2 缺省参数的声明与定义（示例说明）
@@ -70,9 +69,9 @@ void def_param_comma(int a = 0, int b = 0, int c = 0, int d = 0, int e = 0) {
 // 场景：源文件（当前文件）中的定义（不重复指定默认值）
 #include"Default_parameters_func.h"
 void def_param_declare(int a, int b) {
-    cout << "----- 缺省参数的声明与定义（仅声明指定默认值） -----" << endl;
-    cout << "a = " << a << ", b = " << b << endl;
-    cout << endl;
+    std::cout << "----- 缺省参数的声明与定义（仅声明指定默认值） -----" << std::endl;
+    std::cout << "a = " << a << ", b = " << b << std::endl;
+    std::cout << std::endl;
 }
 
 #if 0

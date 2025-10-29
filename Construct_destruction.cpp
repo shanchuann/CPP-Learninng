@@ -1,7 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
 #include<string>
-using namespace std;
 /*******************************************************************************************************************
 * C++ 构造函数与析构函数（Constructor & Destructor）
 * 构造函数和析构函数是类的特殊成员函数，分别负责对象的初始化和资源清理，是面向对象中管理对象生命周期的核心机制。
@@ -75,7 +74,7 @@ int Pointer::GetCol() const {
     return col;
 }
 void this_pointer_demo() {
-    cout << "----- this指针的隐含使用 -----" << endl;
+    std::cout << "----- this指针的隐含使用 -----" << std::endl;
 
     // 创建多个对象，验证this指针指向不同对象
     Pointer pa, pb, pc, pd;
@@ -84,16 +83,16 @@ void this_pointer_demo() {
     pc.SetCol(30); // 传递&pc作为this指针：SetCol(&pc, 30)
     pd.SetCol(40); // 传递&pd作为this指针：SetCol(&pd, 40)
 
-    cout << "pa的行：" << pa.GetRow() << endl; // 10（this指向pa）
-    cout << "pb的行：" << pb.GetRow() << endl; // 20（this指向pb）
-    cout << "pc的列：" << pc.GetCol() << endl; // 30（this指向pc）
-    cout << "pd的列：" << pd.GetCol() << endl; // 40（this指向pd）
-    cout << "\n" << endl;
+    std::cout << "pa的行：" << pa.GetRow() << std::endl; // 10（this指向pa）
+    std::cout << "pb的行：" << pb.GetRow() << std::endl; // 20（this指向pb）
+    std::cout << "pc的列：" << pc.GetCol() << std::endl; // 30（this指向pc）
+    std::cout << "pd的列：" << pd.GetCol() << std::endl; // 40（this指向pd）
+    std::cout << "\n" << std::endl;
 }
 
 // 2. 场景2：构造函数与析构函数（处理动态内存，避免内存泄漏）
 void constructor_destructor_demo() {
-    cout << "----- 构造函数与析构函数（动态内存管理） -----" << endl;
+    std::cout << "----- 构造函数与析构函数（动态内存管理） -----" << std::endl;
 
     class Array {
     private:
@@ -105,12 +104,12 @@ void constructor_destructor_demo() {
             if (s <= 0) {
                 size = 0;
                 data = nullptr;
-                cout << "构造函数：数组大小非法，未分配内存" << endl;
+                std::cout << "构造函数：数组大小非法，未分配内存" << std::endl;
                 return;
             }
             size = s;
             data = new int[size]; // 分配size个int的动态内存（new[]对应delete[]）
-            cout << "构造函数：分配了" << size << "个int的动态内存（地址：" << (void*)data << "）" << endl;
+            std::cout << "构造函数：分配了" << size << "个int的动态内存（地址：" << (void*)data << "）" << std::endl;
         }
 
         // 析构函数：对象销毁时释放动态内存
@@ -118,10 +117,10 @@ void constructor_destructor_demo() {
             if (data != nullptr) {
                 delete[] data; // 释放new[]分配的内存（必须匹配，否则内存泄漏）
                 data = nullptr; // 避免野指针
-                cout << "析构函数：释放了" << size << "个int的动态内存" << endl;
+                std::cout << "析构函数：释放了" << size << "个int的动态内存" << std::endl;
             }
             else {
-                cout << "析构函数：无内存可释放" << endl;
+                std::cout << "析构函数：无内存可释放" << std::endl;
             }
         }
 
@@ -129,61 +128,61 @@ void constructor_destructor_demo() {
         void set(int index, int value) {
             if (index >= 0 && index < size && data != nullptr) {
                 data[index] = value;
-                cout << "数组索引" << index << "赋值为" << value << endl;
+                std::cout << "数组索引" << index << "赋值为" << value << std::endl;
             }
         }
     };
 
     // 测试：对象在局部作用域中的生命周期
     {
-        cout << "\n创建Array对象arr（大小5）：" << endl;
+        std::cout << "\n创建Array对象arr（大小5）：" << std::endl;
         Array arr(5); // 创建对象，调用构造函数（分配内存）
         arr.set(0, 100); // 给数组第0个元素赋值
         arr.set(2, 200); // 给数组第2个元素赋值
     } // 离开局部作用域，对象arr销毁，自动调用析构函数（释放内存）
 
     // 测试：非法大小的数组
-    cout << "\n创建Array对象err_arr（大小-3）：" << endl;
+    std::cout << "\n创建Array对象err_arr（大小-3）：" << std::endl;
     Array err_arr(-3); // 构造函数判断大小非法，不分配内存
-    cout << "\n" << endl;
+    std::cout << "\n" << std::endl;
 }
 
 // 3. 场景3：构造函数重载（无参构造 vs 带参构造）
 void constructor_overload_demo() {
-    cout << "----- 构造函数重载（无参 vs 带参） -----" << endl;
+    std::cout << "----- 构造函数重载（无参 vs 带参） -----" << std::endl;
 
     class Person {
     private:
-        string name; // 姓名
+        std::string name; // 姓名
         int age;     // 年龄
     public:
         // 无参构造函数（手动定义，满足无参创建对象的需求）
         Person() {
             name = "Unknown"; // 初始化默认姓名
             age = 0;         // 初始化默认年龄
-            cout << "无参构造函数被调用" << endl;
+            std::cout << "无参构造函数被调用" << std::endl;
         }
 
         // 带参构造函数（重载，创建对象时直接初始化）
-        Person(const string& n, int a) {
+        Person(const std::string& n, int a) {
             name = n; // 用参数初始化姓名
             age = a;  // 用参数初始化年龄
-            cout << "带参构造函数被调用" << endl;
+            std::cout << "带参构造函数被调用" << std::endl;
         }
 
         // 成员函数：展示对象信息
         void show() const {
-            cout << "Name: " << name << ", Age: " << age << endl;
+            std::cout << "Name: " << name << ", Age: " << age << std::endl;
         }
     };
 
     // 调用无参构造函数创建对象
-    cout << "\n创建无参对象p1：" << endl;
+    std::cout << "\n创建无参对象p1：" << std::endl;
     Person p1;
     p1.show(); // 输出默认初始化的值
 
     // 调用带参构造函数创建对象
-    cout << "\n创建带参对象p2（Tom, 18）：" << endl;
+    std::cout << "\n创建带参对象p2（Tom, 18）：" << std::endl;
     Person p2("Tom", 18);
     p2.show(); // 输出参数初始化的值
 }

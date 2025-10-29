@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
-using namespace std;
+
 /*******************************************************************************************************************
 * C++动态内存分配（Dynamic Memory Allocation）
 * 动态内存分配是指在程序运行时根据需求分配和释放内存的机制，主要通过C++的new/delete运算符、C语言的malloc/free函数
@@ -35,27 +35,27 @@ using namespace std;
 
 // 1. 单个对象的new/delete使用
 void singleObjectDemo() {
-    cout << "----- 单个对象的new/delete -----" << endl;
+    std::cout << "----- 单个对象的new/delete -----" << std::endl;
     // new的过程：1.计算int大小 2.分配内存 3.初始化值10 4.返回int*
     int* pInt = new int(10);  // 分配并初始化单个int
-    cout << "new int(10) = " << *pInt << endl;
+    std::cout << "new int(10) = " << *pInt << std::endl;
 
     // 直接调用operator new（底层内存分配函数，类似malloc）
     int* pOpNew = (int*)::operator new(sizeof(int));  // 仅分配内存，不初始化
     *pOpNew = 20;  // 手动初始化
-    cout << "::operator new分配的int = " << *pOpNew << endl;
+    std::cout << "::operator new分配的int = " << *pOpNew << std::endl;
 
     // 释放内存
     delete pInt;       // 释放new分配的内存
     ::operator delete(pOpNew);  // 释放operator new分配的内存（对应操作）
     pInt = nullptr;    // 避免野指针
     pOpNew = nullptr;
-    cout << endl;
+    std::cout << std::endl;
 }
 
 // 2. 数组的new[]/delete[]使用
 void arrayDemo() {
-    cout << "----- 数组的new[]/delete[] -----" << endl;
+    std::cout << "----- 数组的new[]/delete[] -----" << std::endl;
     size_t size = 10;
 
     // 分配未初始化的int数组
@@ -63,19 +63,19 @@ void arrayDemo() {
     for (size_t i = 0; i < size; i++) {
         arr[i] = i + 1;  // 手动初始化
     }
-    cout << "未初始化数组（手动赋值）: ";
+    std::cout << "未初始化数组（手动赋值）: ";
     for (size_t i = 0; i < size; i++) {
-        cout << arr[i] << " ";
+        std::cout << arr[i] << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
 
     // 分配并初始化的int数组（C++11列表初始化）
     int* arrInit = new int[size] {10, 11, 12, 13, 14, 15, 16, 17, 18, 19};
-    cout << "初始化数组（列表赋值）: ";
+    std::cout << "初始化数组（列表赋值）: ";
     for (size_t i = 0; i < size; i++) {
-        cout << arrInit[i] << " ";
+        std::cout << arrInit[i] << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
 
     // C语言的malloc/free分配数组（兼容使用）
     int* arrMalloc = (int*)malloc(size * sizeof(int));  // 需显式计算字节数，返回void*
@@ -88,15 +88,15 @@ void arrayDemo() {
     delete[] arrInit;
     arr = nullptr;
     arrInit = nullptr;
-    cout << endl;
+    std::cout << std::endl;
 }
 
 // 3. placement new（定位new）使用
 void placementNewDemo() {
-    cout << "----- placement new（定位new） -----" << endl;
+    std::cout << "----- placement new（定位new） -----" << std::endl;
     // 在栈上分配一块缓冲区（也可以是堆或全局内存）
     char buffer[128];  // 栈上的内存块，大小128字节
-    cout << "缓冲区起始地址: " << (void*)buffer << endl;
+    std::cout << "缓冲区起始地址: " << (void*)buffer << std::endl;
 
     // 在缓冲区指定位置构造int（不分配新内存，仅初始化）
     int* p1 = new(buffer) int(10);  // 从buffer起始位置构造int
@@ -106,27 +106,27 @@ void placementNewDemo() {
     double* p3 = new(buffer + sizeof(double)) double(3.14);
 
     // 验证数据
-    cout << "buffer起始位置的int: " << *p1 << "（地址: " << (void*)p1 << "）" << endl;
-    cout << "偏移int大小的int: " << *p2 << "（地址: " << (void*)p2 << "）" << endl;
-    cout << "偏移double大小的double: " << *p3 << "（地址: " << (void*)p3 << "）" << endl;
+    std::cout << "buffer起始位置的int: " << *p1 << "（地址: " << (void*)p1 << "）" << std::endl;
+    std::cout << "偏移int大小的int: " << *p2 << "（地址: " << (void*)p2 << "）" << std::endl;
+    std::cout << "偏移double大小的double: " << *p3 << "（地址: " << (void*)p3 << "）" << std::endl;
 
     // 注意：placement new不分配内存，无需用delete释放buffer
     // 若为类类型，需显式调用析构函数（基本类型可忽略）
     // p1->~int();  // 基本类型析构无意义，可省略
-    cout << endl;
+    std::cout << std::endl;
 }
 
 // 4. new与malloc的核心区别对比
 void newVsMalloc() {
-    cout << "----- new与malloc的核心区别 -----" << endl;
+    std::cout << "----- new与malloc的核心区别 -----" << std::endl;
     // new的特性：自动计算大小、返回类型指针、初始化（构造函数）
     int* pNew = new int(12);
     // malloc的特性：需显式指定大小、返回void*（需强转）、不初始化
     int* pMalloc = (int*)malloc(sizeof(int));
     *pMalloc = 12;  // 手动初始化
 
-    cout << "new分配的int: " << *pNew << endl;
-    cout << "malloc分配的int: " << *pMalloc << endl;
+    std::cout << "new分配的int: " << *pNew << std::endl;
+    std::cout << "malloc分配的int: " << *pMalloc << std::endl;
 
     // 释放：new对应delete，malloc对应free
     delete pNew;    // 释放+（类类型）析构

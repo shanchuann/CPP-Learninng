@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
-using namespace std;
+
 /*******************************************************************************************************************
 * C++ 运算符重载（Operator Overloading）
 * 定义：运算符重载是C++允许用户为自定义类型（如类、结构体）重新定义运算符的行为，使运算符能像操作基本类型（int、double）一样
@@ -23,7 +23,7 @@ using namespace std;
 
 // 1. 场景1：算术运算符重载（成员函数实现，以复数相加为例）
 void arithmetic_operator_overload() {
-    cout << "----- 算术运算符重载（成员函数：复数相加） -----" << endl;
+    std::cout << "----- 算术运算符重载（成员函数：复数相加） -----" << std::endl;
 
     class Complex {
     public:
@@ -45,9 +45,9 @@ void arithmetic_operator_overload() {
     Complex c2(3.0, 4.0);  // 3 + 4i
     Complex c3 = c1 + c2;  // 等价于 c1.operator+(c2)
 
-    cout << "c1 = " << c1.real << " + " << c1.imag << "i" << endl;
-    cout << "c2 = " << c2.real << " + " << c2.imag << "i" << endl;
-    cout << "c3 = c1 + c2 = " << c3.real << " + " << c3.imag << "i" << "\n" << endl;
+    std::cout << "c1 = " << c1.real << " + " << c1.imag << "i" << std::endl;
+    std::cout << "c2 = " << c2.real << " + " << c2.imag << "i" << std::endl;
+    std::cout << "c3 = c1 + c2 = " << c3.real << " + " << c3.imag << "i" << "\n" << std::endl;
 }
 
 // 2. 场景2：关系运算符重载（全局函数实现，以对象属性比较为例）
@@ -68,31 +68,31 @@ bool operator==(const Person& p1, const Person& p2) {
     return p1.age == p2.age;
 }
 void relation_operator_overload() {
-    cout << "----- 关系运算符重载（全局函数：对象年龄比较） -----" << endl;
+    std::cout << "----- 关系运算符重载（全局函数：对象年龄比较） -----" << std::endl;
 
     // 使用重载的==运算符
     Person p1(18), p2(18), p3(20);
-    cout << "p1.age = " << p1.age << ", p2.age = " << p2.age << endl;
+    std::cout << "p1.age = " << p1.age << ", p2.age = " << p2.age << std::endl;
     if (p1 == p2) { // 等价于 operator==(p1, p2)
-        cout << "p1 和 p2 年龄相等" << endl;
+        std::cout << "p1 和 p2 年龄相等" << std::endl;
     }
     else {
-        cout << "p1 和 p2 年龄不等" << endl;
+        std::cout << "p1 和 p2 年龄不等" << std::endl;
     }
 
-    cout << "p1.age = " << p1.age << ", p3.age = " << p3.age << endl;
+    std::cout << "p1.age = " << p1.age << ", p3.age = " << p3.age << std::endl;
     if (p1 == p3) {
-        cout << "p1 和 p3 年龄相等" << endl;
+        std::cout << "p1 和 p3 年龄相等" << std::endl;
     }
     else {
-        cout << "p1 和 p3 年龄不等" << endl;
+        std::cout << "p1 和 p3 年龄不等" << std::endl;
     }
-    cout << "\n" << endl;
+    std::cout << "\n" << std::endl;
 }
 
 // 3. 场景3：自增运算符重载（成员函数实现，区分前缀和后缀）
 void increment_operator_overload() {
-    cout << "----- 自增运算符重载（成员函数：区分前缀++和后缀++） -----" << endl;
+    std::cout << "----- 自增运算符重载（成员函数：区分前缀++和后缀++） -----" << std::endl;
 
     class UPInt {
     private:
@@ -116,30 +116,30 @@ void increment_operator_overload() {
 
         // 辅助函数：输出值（便于验证）
         void show() const {
-            cout << "value = " << value << endl;
+            std::cout << "value = " << value << std::endl;
         }
     };
 
     // 使用重载的自增运算符
     UPInt a(10);
-    cout << "初始a：";
+    std::cout << "初始a：";
     a.show();
 
     ++a; // 调用前缀自增：operator++()
-    cout << "++a（前缀）后：";
+    std::cout << "++a（前缀）后：";
     a.show();
 
     a++; // 调用后缀自增：operator++(0)（编译器自动传入int参数）
-    cout << "a++（后缀）后：";
+    std::cout << "a++（后缀）后：";
     a.show();
 
     // 验证前缀和后缀的返回值差异
     UPInt b(5), c(5);
     UPInt d = ++b; // 前缀返回自增后对象，d = 6
     UPInt e = c++; // 后缀返回自增前对象，e = 5
-    cout << "++b后，b："; b.show(); cout << "d = ++b："; d.show();
-    cout << "c++后，c："; c.show(); cout << "e = c++："; e.show();
-    cout << "\n" << endl;
+    std::cout << "++b后，b："; b.show(); std::cout << "d = ++b："; d.show();
+    std::cout << "c++后，c："; c.show(); std::cout << "e = c++："; e.show();
+    std::cout << "\n" << std::endl;
 }
 
 // 4. 场景4：流运算符重载（全局友元函数，实现对象的cout输出）
@@ -152,23 +152,23 @@ public:
     Complex(double r = 0.0, double i = 0.0) : real(r), imag(i) {}
 
     // 声明<<运算符为友元（需访问私有成员real和imag）
-    friend ostream& operator<<(ostream& os, const Complex& c);
+    friend std::ostream& operator<<(std::ostream& os, const Complex& c);
 };
 // 重载<<运算符（全局友元函数）：左操作数为ostream对象（如cout），右操作数为Complex对象
-ostream& operator<<(ostream& os, const Complex& c) {
+std::ostream& operator<<(std::ostream& os, const Complex& c) {
     // 自定义输出格式：(实部, 虚部)
     os << "(" << c.real << ", " << c.imag << ")";
     return os; // 返回ostream对象，支持链式输出（如cout << c1 << c2）
 }
 
 void stream_operator_overload() {
-    cout << "----- 流运算符重载（全局友元：cout输出复数） -----" << endl;
+    std::cout << "----- 流运算符重载（全局友元：cout输出复数） -----" << std::endl;
 
     // 使用重载的<<运算符
     Complex c1(1.0, 2.0), c2(3.0, 4.0);
-    cout << "c1 = " << c1 << endl; // 等价于 operator<<(cout, c1)
-    cout << "c2 = " << c2 << endl; // 等价于 operator<<(cout, c2)
-    cout << "c1 和 c2 分别为：" << c1 << " 和 " << c2 << endl; // 链式输出
+    std::cout << "c1 = " << c1 << std::endl; // 等价于 operator<<(cout, c1)
+    std::cout << "c2 = " << c2 << std::endl; // 等价于 operator<<(cout, c2)
+    std::cout << "c1 和 c2 分别为：" << c1 << " 和 " << c2 << std::endl; // 链式输出
 }
 
 #if 0
