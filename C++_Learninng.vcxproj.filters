@@ -66,6 +66,9 @@
     <ClCompile Include="Operator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Member_methods.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default_parameters_func.h">
