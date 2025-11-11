@@ -132,6 +132,7 @@
     <ClCompile Include="Construct_destruction.cpp" />
     <ClCompile Include="Default_parameters.cpp" />
     <ClCompile Include="Encapsulation.cpp" />
+    <ClCompile Include="Friend.cpp" />
     <ClCompile Include="Function_overloading.cpp" />
     <ClCompile Include="Function_template.cpp" />
     <ClCompile Include="Initialization.cpp" />

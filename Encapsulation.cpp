@@ -168,7 +168,7 @@ public:
 int getArea(const Rectangle& r) {
     return r.width * r.height;
 }
-void friend_function_demo() {
+void ENfriend_function_demo() {
     std::cout << "----- 友元函数（Friend Function） -----" << std::endl;
     // 使用友元函数
     Rectangle rect1;          // 默认宽3、高4
