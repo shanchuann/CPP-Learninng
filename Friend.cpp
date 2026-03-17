@@ -156,6 +156,7 @@ std::ostream& operator<<(std::ostream& os, const Student4& s) {
     os << "Name: " << s.name << ", Age: " << s.age;
     return os;
 }
+
 #if 0
 int main() {
     friend_function_demo();
