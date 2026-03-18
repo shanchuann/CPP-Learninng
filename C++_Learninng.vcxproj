@@ -143,6 +143,7 @@
     <ClCompile Include="New_Delete.cpp" />
     <ClCompile Include="Nullptr.cpp" />
     <ClCompile Include="Operator.cpp" />
+    <ClCompile Include="Polymorphism.cpp" />
     <ClCompile Include="Range_for.cpp" />
     <ClCompile Include="References.cpp" />
     <ClCompile Include="Singleton.cpp" />

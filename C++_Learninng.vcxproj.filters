@@ -78,6 +78,9 @@
     <ClCompile Include="Singleton.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Polymorphism.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default_parameters_func.h">
