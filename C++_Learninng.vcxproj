@@ -148,8 +148,10 @@
     <ClCompile Include="References.cpp" />
     <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="String.cpp" />
+    <ClCompile Include="Type_Conversion.cpp" />
     <ClCompile Include="Typedef_and_using.cpp" />
     <ClCompile Include="Type_derivation.cpp" />
+    <ClCompile Include="Virtual.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default_parameters_func.h" />

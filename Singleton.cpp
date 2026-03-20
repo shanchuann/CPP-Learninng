@@ -130,32 +130,32 @@ public:
     }
 };
 
-// ===================== 4. 饿汉式 - 全局静态变量 线程安全 =====================
-class Singleton_Hungry_Global {
-private:
-    Singleton_Hungry_Global(int val = 0) : value(val) {
-        std::cout << "Singleton_Hungry_Global 构造函数被调用" << std::endl;
-    }
-    Singleton_Hungry_Global(const Singleton_Hungry_Global&) = delete;
-    Singleton_Hungry_Global& operator=(const Singleton_Hungry_Global&) = delete;
-    ~Singleton_Hungry_Global() {
-        std::cout << "Singleton_Hungry_Global 析构函数被调用" << std::endl;
-    }
-
-    static Singleton_Hungry_Global s;
-    int value;
-
-public:
-    static Singleton_Hungry_Global& getInstance() {
-        return s;
-    }
-
-    void show() {
-        std::cout << "Singleton_Hungry_Global: " << value << std::endl;
-    }
-};
-
-Singleton_Hungry_Global Singleton_Hungry_Global::s(10);
+//// ===================== 4. 饿汉式 - 全局静态变量 线程安全 =====================
+//class Singleton_Hungry_Global {
+//private:
+//    Singleton_Hungry_Global(int val = 0) : value(val) {
+//        std::cout << "Singleton_Hungry_Global 构造函数被调用" << std::endl;
+//    }
+//    Singleton_Hungry_Global(const Singleton_Hungry_Global&) = delete;
+//    Singleton_Hungry_Global& operator=(const Singleton_Hungry_Global&) = delete;
+//    ~Singleton_Hungry_Global() {
+//        std::cout << "Singleton_Hungry_Global 析构函数被调用" << std::endl;
+//    }
+//
+//    static Singleton_Hungry_Global s;
+//    int value;
+//
+//public:
+//    static Singleton_Hungry_Global& getInstance() {
+//        return s;
+//    }
+//
+//    void show() {
+//        std::cout << "Singleton_Hungry_Global: " << value << std::endl;
+//    }
+//};
+//
+//Singleton_Hungry_Global Singleton_Hungry_Global::s(10);
 
 // ===================== 测试函数 =====================
 void testDCL() {
@@ -182,20 +182,20 @@ void testHungryLocal() {
     ins2.show();
 }
 
-void testHungryGlobal() {
-    std::cout << "\n=== 测试 饿汉式（全局静态）===" << std::endl;
-    Singleton_Hungry_Global& ins1 = Singleton_Hungry_Global::getInstance();
-    Singleton_Hungry_Global& ins2 = Singleton_Hungry_Global::getInstance();
-    ins1.show();
-    ins2.show();
-}
+//void testHungryGlobal() {
+//    std::cout << "\n=== 测试 饿汉式（全局静态）===" << std::endl;
+//    Singleton_Hungry_Global& ins1 = Singleton_Hungry_Global::getInstance();
+//    Singleton_Hungry_Global& ins2 = Singleton_Hungry_Global::getInstance();
+//    ins1.show();
+//    ins2.show();
+//}
 
 #if 0
 int main() {
     testDCL();
     testLazyNoneSafe();
     testHungryLocal();
-    testHungryGlobal();
+    //testHungryGlobal();
 
     return 0;
 }
