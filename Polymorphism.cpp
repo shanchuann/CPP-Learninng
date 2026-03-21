@@ -1,6 +1,7 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
 #include <typeinfo>
+#include <cstdint>
 
 /*******************************************************************************************************************
 * C++ 多态（Polymorphism）核心知识点总结
@@ -311,12 +312,13 @@ void testVTable() {
 
     using FuncPtr = void (*)();
     Base_VTable* ptr = &d;
-    long* vptr = (long*)ptr;
-    long* vtable = (long*)*vptr;
+    // Use uintptr_t and void** to access vtable entries safely with correct pointer size
+    auto vptr = reinterpret_cast<uintptr_t*>(ptr);
+    auto vtable = reinterpret_cast<void**>(*vptr);
 
-    FuncPtr func = (FuncPtr)vtable[0];
+    FuncPtr func = reinterpret_cast<FuncPtr>(vtable[0]);
     func();
-    func = (FuncPtr)vtable[1];
+    func = reinterpret_cast<FuncPtr>(vtable[1]);
     func();
 }
 #if 0

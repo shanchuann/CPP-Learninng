@@ -1,4 +1,4 @@
-# CPP-Learninng
+# CPP Learninng
 
 ![image](https://img.shields.io/badge/level-beginner-cyan.svg) ![image](https://img.shields.io/badge/language-C++-blue.svg) ![image](https://img.shields.io/badge/license-MIT-green.svg) ![image](https://img.shields.io/badge/environment-Visual%20Studio-orange.svg)
 
@@ -33,6 +33,7 @@
 | 纯虚函数与抽象类  | 纯虚函数和抽象类是实现多态性的核心机制，它们允许我们定义一组类的共同接口，并强制派生类实现特定的功能。 |
 | final 和 override | 在编译期就对继承和重写行为进行约束与校验。                   |
 | 四种类型转换      | C++标准引入的命名强制类型转换运算符：`static_cast`、`reinterpret_cast`、`const_cast`、`dynamic_cast`。 |
+| 标准模板库        | vector、deque、list、有序关联容器                            |
 
 
 ## 使用方法
@@ -40,6 +41,7 @@
 1. 通过`git clone https://github.com/shanchuann/CPP-Learninng.git`将仓库克隆到本地；
 2. 打开 Visual Studio（推荐 2019 及以上版本，需支持 C++11 及更高标准），导入仓库中的`C++_Learninng.sln`解决方案；
 3. 在解决方案资源管理器中选中目标`.cpp`文件（如`References.cpp`），删去条件编译后，点击编译并运行，即可查看代码运行效果（由于文件较多因此编译时间可能过长）。
+4. 有序关联容器中Map基础函数需要单独在Map.cpp编译。
 
 ## 许可证
 
