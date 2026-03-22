@@ -324,7 +324,7 @@ void test_multiset()
     std::cout << "删除单个85分后，剩余85分次数：" << scoreSet.count(85) << std::endl;
     std::cout << std::endl << std::endl;
 }
-
+#if 0
 // 主函数
 int main()
 {
@@ -339,3 +339,4 @@ int main()
     test_multiset();
     return 0;
 }
+#endif

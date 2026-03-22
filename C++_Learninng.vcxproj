@@ -130,11 +130,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ConsistentHash.cpp" />
+    <ClCompile Include="Container_Adapter.cpp" />
     <ClCompile Include="Copy_construction.cpp" />
     <ClCompile Include="Construct_destruction.cpp" />
     <ClCompile Include="Default_parameters.cpp" />
     <ClCompile Include="Deque.cpp" />
     <ClCompile Include="Encapsulation.cpp" />
+    <ClCompile Include="Linkhash.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Friend.cpp" />
     <ClCompile Include="Function_overloading.cpp" />
@@ -148,11 +151,12 @@
     <ClCompile Include="New_Delete.cpp" />
     <ClCompile Include="Nullptr.cpp" />
     <ClCompile Include="Operator.cpp" />
-    <ClCompile Include="Ordered_container.cpp" />
+    <ClCompile Include="Ordered.cpp" />
     <ClCompile Include="Polymorphism.cpp" />
     <ClCompile Include="Range_for.cpp" />
     <ClCompile Include="References.cpp" />
     <ClCompile Include="Singleton.cpp" />
+    <ClCompile Include="Unordered.cpp" />
     <ClCompile Include="Vector.cpp" />
     <ClCompile Include="String.cpp" />
     <ClCompile Include="Type_Conversion.cpp" />
