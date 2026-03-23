@@ -224,8 +224,9 @@ void test_my_shared_ptr() {
 
     cout << "--- test_my_shared_ptr end ---\n";
 }
-
+#if 0
 int main() {
     test_my_shared_ptr();
 	return 0;
 }
+#endif

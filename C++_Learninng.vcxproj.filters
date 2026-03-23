@@ -120,6 +120,9 @@
     <ClCompile Include="My_shared_ptr.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="My_weak_ptr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Default_parameters_func.h">
