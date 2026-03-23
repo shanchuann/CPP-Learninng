@@ -146,6 +146,8 @@
     <ClCompile Include="Initialization.cpp" />
     <ClCompile Include="io.cpp" />
     <ClCompile Include="List.cpp" />
+    <ClCompile Include="My_shared_ptr.cpp" />
+    <ClCompile Include="My_unique_ptr.cpp" />
     <ClCompile Include="Namespace.cpp" />
     <ClCompile Include="Name_Mangling.cpp" />
     <ClCompile Include="New_Delete.cpp" />
