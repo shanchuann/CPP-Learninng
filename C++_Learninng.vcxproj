@@ -159,6 +159,7 @@
     <ClCompile Include="Range_for.cpp" />
     <ClCompile Include="References.cpp" />
     <ClCompile Include="Singleton.cpp" />
+    <ClCompile Include="Thread.cpp" />
     <ClCompile Include="Unordered.cpp" />
     <ClCompile Include="Vector.cpp" />
     <ClCompile Include="String.cpp" />
