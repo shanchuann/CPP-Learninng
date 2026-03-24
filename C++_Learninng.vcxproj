@@ -137,6 +137,7 @@
     <ClCompile Include="Default_parameters.cpp" />
     <ClCompile Include="Deque.cpp" />
     <ClCompile Include="Encapsulation.cpp" />
+    <ClCompile Include="Lambda.cpp" />
     <ClCompile Include="Linkhash.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Friend.cpp" />

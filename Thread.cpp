@@ -307,6 +307,7 @@ void linuxPthreadDemo() {
 }
 #endif
 
+#if 0
 int main() {
     // 依次运行所有演示模块
     threadBaseDemo();    // 线程基础操作
@@ -321,3 +322,4 @@ int main() {
 
     return 0;
 }
+#endif
